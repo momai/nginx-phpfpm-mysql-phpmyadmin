@@ -14,6 +14,9 @@ jobs:
       #run:  ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa <<<y >/dev/null 2>&1
       run: mkdir /home/runner/.ssh/ && touch /home/runner/.ssh/id_rsa && echo secrets.PRIVATE >>/home/runner/.ssh/id_rsa
       
+    - name: 'chown'
+      run: sudo chown 644 /home/runner/.ssh/id_rsa
+      
     - name: 'touch'
       run: touch /home/runner/.ssh/authorized_keys
       
