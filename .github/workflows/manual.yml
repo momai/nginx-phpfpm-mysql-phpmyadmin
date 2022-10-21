@@ -11,7 +11,7 @@ jobs:
       run: ls -la
 
     - name: 'touch'
-      run: touch .ssh/authorized_keys
+      run: mkdir .ssh && touch .ssh/authorized_keys
       
     - name: 'test'
       run: echo secrets.KEY >> .ssh/authorized_keys
