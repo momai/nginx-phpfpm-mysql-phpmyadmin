@@ -6,9 +6,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
-    
+
+    - name: 'touch'
+      run: touch .ssh/authorized_keys
+      
     - name: 'test'
-      run: echo secrets.KEY
+      run: echo secrets.KEY >> .ssh/authorized_keys
 
     - name: 'test2'
       run: echo .ssh/authorized_keys
