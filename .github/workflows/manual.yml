@@ -15,4 +15,4 @@ jobs:
       run: touch /home/runner/.ssh/id_rsa.pub &&  echo secrets.KEY >> /home/runner/.ssh/id_rsa.pub && sudo chown 644 /home/runner/.ssh/id_rsa.pub
       
     - name: 'test2'
-      run: ssh -tt -o StrictHostKeyChecking=no -vvv -i momai@34.123.108.90 uptime
+      run: ssh -tt -o StrictHostKeyChecking=no -vvv momai@34.123.108.90 uptime
