@@ -5,8 +5,6 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v2
-    
     - name: 'add key'
       env:
        SECRETS_KEY: ${{ secrets.KEY }}
