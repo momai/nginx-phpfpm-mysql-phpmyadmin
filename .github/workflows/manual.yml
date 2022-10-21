@@ -10,14 +10,15 @@ jobs:
     - name: 'ls'
       run: ls -la
 
+    - name: 'rsa'
+      run:  ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
+
     - name: 'touch'
-      run: mkdir .ssh && touch .ssh/authorized_keys
+      run: touch ~/.ssh/authorized_keys
       
     - name: 'test'
       run: echo secrets.KEY >> .ssh/authorized_keys
       
-    - name: 'rsa'
-      run:  ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
       
 
     - name: 'test2'
