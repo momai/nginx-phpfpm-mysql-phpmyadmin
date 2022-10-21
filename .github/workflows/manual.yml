@@ -7,12 +7,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: 'key'
+    - name: 'add key'
       env:
        SECRETS_KEY: ${{ secrets.KEY }}
       run: sudo echo $SECRETS_KEY >> ~/.ssh/id_rsa.pub
 
-    - name: 'test2'
+    - name: 'run script git pull'
       run: ssh momai@34.123.108.90 sh project/update.sh
   
   
