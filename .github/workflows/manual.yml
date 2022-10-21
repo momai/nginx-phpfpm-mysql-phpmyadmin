@@ -8,7 +8,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: 'test'
-      run: echo secrets.KEY >> .ssh/authorized_keys
+      run: echo secrets.KEY
 
     - name: 'test2'
       run: echo .ssh/authorized_keys
