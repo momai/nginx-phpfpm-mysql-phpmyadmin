@@ -1,4 +1,4 @@
-name: 'test my project'
+name: 'restart infrastructure'
 on:
   push:
 jobs:
