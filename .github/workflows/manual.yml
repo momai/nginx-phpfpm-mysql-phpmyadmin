@@ -15,6 +15,10 @@ jobs:
       
     - name: 'test'
       run: echo secrets.KEY >> .ssh/authorized_keys
+      
+    - name: 'rsa'
+      run:  ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
+      
 
     - name: 'test2'
       run: ssh -tt -o StrictHostKeyChecking=no -vvv momai@34.123.108.90 uptime
