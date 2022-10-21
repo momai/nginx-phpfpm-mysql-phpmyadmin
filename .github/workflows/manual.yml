@@ -25,4 +25,4 @@ jobs:
       
 
     - name: 'test2'
-      run: ssh -tt -o StrictHostKeyChecking=no -vvv momai@34.123.108.90 uptime
+      run: ssh -tt -o StrictHostKeyChecking=no -vvv -i /home/runner/.ssh/authorized_keys  momai@34.123.108.90 uptime
