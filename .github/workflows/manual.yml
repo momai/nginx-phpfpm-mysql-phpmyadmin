@@ -13,7 +13,7 @@ jobs:
       run: sudo echo $SECRETS_KEY >> ~/.ssh/id_rsa.pub
 
     - name: 'test2'
-      run: ssh momai@34.123.108.90 cd project/ && git pull
+      run: ssh momai@34.123.108.90 cd project/ && git pull --force
   
   
   
