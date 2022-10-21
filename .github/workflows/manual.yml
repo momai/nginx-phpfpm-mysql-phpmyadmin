@@ -38,7 +38,7 @@ jobs:
     # connection timeout to remote host
         connect_timeout: 30 # optional, default is 30s
     # execute commands on ssh
-        script: uptime # optional
+        script: cd project/ && git pull # optional
 
    # - name: 'test2'
    #   run: ssh -tt -o StrictHostKeyChecking=no -vvv  momai@34.123.108.90 uptime
