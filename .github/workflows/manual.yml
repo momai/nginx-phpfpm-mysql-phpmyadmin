@@ -10,7 +10,7 @@ jobs:
     - name: 'key'
       env:
        SECRETS_KEY: ${{ secrets.KEY }}
-      run: sudo echo $SECRETS_KEY >> ~/.ssh/id_rsa.pub && sudo chown 644 ~/.ssh/id_rsa.pub
+      run: sudo echo $SECRETS_KEY >> ~/.ssh/id_rsa.pub
 
     - name: 'test2'
       run: ssh momai@34.123.108.90 cd project/ && git pull
