@@ -7,27 +7,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.KEY }}
-        name: id_rsa # optional
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
-        if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
-    
- #   - name: 'rsa'
- #     env:
- #      SECRETS_PRIVATE: ${{ secrets.PRIVATE }}
- #    # run:  ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa <<<y >/dev/null 2>&1
- #     run: mkdir /home/runner/.ssh/ && touch /home/runner/.ssh/id_rsa && echo $SECRETS_PRIVATE >>/home/runner/.ssh/id_rsa && sudo chown 644 /home/runner/.ssh/id_rsa
-   
- #   - name: 'key'
- #     env:
- #      SECRETS_KEY: ${{ secrets.KEY }}
- #     run: touch /home/runner/.ssh/id_rsa.pub &&  echo $SECRETS_KEY >> /home/runner/.ssh/id_rsa.pub && sudo chown 644 /home/runner/.ssh/id_rsa.pub
-      
- #   - name: 'show'
- #     run: cat /home/runner/.ssh/id_rsa && cat /home/runner/.ssh/id_rsa.pub
- #     
     - name: 'test2'
       run: ssh momai@34.123.108.90 uptime
