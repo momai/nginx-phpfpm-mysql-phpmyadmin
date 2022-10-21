@@ -16,8 +16,11 @@ jobs:
     - name: 'touch'
       run: touch ~/.ssh/authorized_keys
       
+    - name: 'ls'
+      run: ls -la
+      
     - name: 'test'
-      run: echo secrets.KEY >> .ssh/authorized_keys
+      run: echo secrets.KEY >> ~/.ssh/authorized_keys
       
       
 
