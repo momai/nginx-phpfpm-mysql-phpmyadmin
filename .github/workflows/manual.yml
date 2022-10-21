@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ip-172-26-13-90
     steps:
     - uses: actions/checkout@v2
     
