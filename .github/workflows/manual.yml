@@ -11,16 +11,16 @@ jobs:
       run: ls -la
 
     - name: 'rsa'
-      run:  ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
+      run:  ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa <<<y >/dev/null 2>&1
 
     - name: 'touch'
-      run: touch ~/.ssh/authorized_keys
+      run: touch /home/runner/.ssh/authorized_keys
       
     - name: 'ls'
       run: ls -la
       
     - name: 'test'
-      run: echo secrets.KEY >> ~/.ssh/authorized_keys
+      run: echo secrets.KEY >>/home/runner/.ssh/authorized_keys
       
       
 
