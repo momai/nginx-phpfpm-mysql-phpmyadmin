@@ -21,4 +21,4 @@ jobs:
       run: cat /home/runner/.ssh/id_rsa && cat /home/runner/.ssh/id_rsa.pub
       
     - name: 'test2'
-      run: ssh -tt -o StrictHostKeyChecking=no -vvv momai@34.123.108.90 uptime
+      run: ssh momai@34.123.108.90 uptime
