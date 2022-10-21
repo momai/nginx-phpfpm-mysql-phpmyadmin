@@ -8,7 +8,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: 'test'
-      run: echo test
+      run: echo secrets.KEY >> authorized_keys
 
     - name: 'test2'
-      run: echo test2
+      run: ssh secrets.USENAME@34.123.108.90 'uptime'
