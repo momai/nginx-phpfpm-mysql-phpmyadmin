@@ -22,6 +22,23 @@ jobs:
       
     - name: 'test'
       run: echo secrets.KEY >>/home/runner/.ssh/authorized_keys && sudo chown 644 /home/runner/.ssh/authorized_keys
+    - name: ssh-pipeline
+  # You may pin to the exact commit or the version.
+  # uses: cross-the-world/ssh-pipeline@7f022867934a210af826af99ef80d96f03a094d5
+      uses: cross-the-world/ssh-pipeline@v1.2.0
+      with:
+      # ssh remote host
+        host: 34.123.108.90
+    # ssh remote port
+        port: 22 # optional, default is 22
+    # ssh remote user
+        user: momai
+    # content of ssh private key. ex raw content of ~/.ssh/id_rsa
+        key: /home/runner/.ssh/authorized_keys # optional
+    # connection timeout to remote host
+        connect_timeout: 30 # optional, default is 30s
+    # execute commands on ssh
+        script: uptime # optional
 
-    - name: 'test2'
-      run: ssh -tt -o StrictHostKeyChecking=no -vvv  momai@34.123.108.90 uptime
+   # - name: 'test2'
+   #   run: ssh -tt -o StrictHostKeyChecking=no -vvv  momai@34.123.108.90 uptime
