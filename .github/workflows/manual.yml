@@ -9,19 +9,9 @@ jobs:
 
     - name: 'rsa'
       run:  ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa <<<y >/dev/null 2>&1 && ssh-keygen -p -m PEM -N '' -f /home/runner/.ssh/id_rsa
+   
+    - name: 'key'
+      run: touch /home/runner/.ssh/authorized_keys &&  echo secrets.KEY >>/home/runner/.ssh/authorized_keys && sudo chown 644 /home/runner/.ssh/authorized_keys
       
-    - name: ssh scp ssh pipelines
-      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
-      env:
-          WELCOME: "ssh scp ssh pipelines"
-          LASTSSH: "Doing something after copying"
-      with:
-          host: 34.123.108.90
-          user: momai
-          key: ${{ secrets.KEY }}
-          port: 22
-          connect_timeout: 10s
-          first_ssh: |-
-            uptime
-            cd project/
-            git pull
+    - name: 'test2'
+      run: ssh -tt -o StrictHostKeyChecking=no -vvv -i /home/runner/.ssh/authorized_keys  momai@34.123.108.90 uptime
