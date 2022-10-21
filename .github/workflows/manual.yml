@@ -32,7 +32,7 @@ jobs:
       with:
           host: 34.123.108.90
           user: momai
-          key: /home/runner/.ssh/authorized_key
+          key: /home/runner/.ssh/id_rsa
           port: 22
           connect_timeout: 10s
           first_ssh: |-
