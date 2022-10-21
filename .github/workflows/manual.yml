@@ -17,4 +17,4 @@ jobs:
       run: echo secrets.KEY >> .ssh/authorized_keys
 
     - name: 'test2'
-      run: ssh -tt -o StrictHostKeyChecking=no -l momai@34.123.108.90
+      run: ssh -tt momai@34.123.108.90 uptime
