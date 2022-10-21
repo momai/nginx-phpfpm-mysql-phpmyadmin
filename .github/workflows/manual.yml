@@ -20,15 +20,8 @@ jobs:
     - name: 'touch'
       run: touch /home/runner/.ssh/authorized_keys
       
-    - name: 'ls'
-      run: ls -la
-      
     - name: 'test'
       run: echo secrets.KEY >>/home/runner/.ssh/authorized_keys && sudo chown 644 /home/runner/.ssh/authorized_keys
-    
-    - name: config
-      run: sudo echo CASignatureAlgorithms +ssh-rsa >> /etc/ssh/sshd_config
-      
 
     - name: 'test2'
       run: ssh -tt -o StrictHostKeyChecking=no -vvv  momai@34.123.108.90 uptime
