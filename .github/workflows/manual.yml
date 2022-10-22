@@ -12,5 +12,8 @@ jobs:
        SECRETS_KEY: ${{ secrets.KEY }}
       run: sudo echo $SECRETS_KEY >> ~/.ssh/id_rsa.pub
 
+    - name: 'run script backupbd'
+      run: ssh momai@34.123.108.90 sh nginx-phpfpm-mysql-phpmyadmin/backupbd.sh
+
     - name: 'run script git pull'
       run: ssh momai@34.123.108.90 sh nginx-phpfpm-mysql-phpmyadmin/update.sh
