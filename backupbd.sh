@@ -5,6 +5,7 @@ DATA=`date +"%Y-%m-%d_%H-%M"`
 #backup dir
 backupdir="/home/momai/project/backupbd"
 
+#env file
 . /home/momai/project/.env
 
 docker exec mysql /usr/bin/mysqldump --defaults-extra-file=/var/lib/mysql-credentials.cnf test > "$backupdir"/"$DATA"-test.sql
