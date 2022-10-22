@@ -1,5 +1,10 @@
 name: 'restart infrastructure'
 on:
+  workflow_run:
+    workflows: ["update web pages"]
+    types:
+      - completed
+      
   push:
 jobs:
   deploy:
