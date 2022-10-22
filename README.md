@@ -95,6 +95,8 @@ KEY
 USERNAME
 ```
 
+Так же, в проекте есть другой actions призванный перезапустить контейнеры. Если вы внесли изменения в инфрастуктуру и хотите перезапустить контейнеры, вы можете включить [actions restart-container](https://github.com/momai/nginx-phpfpm-mysql-phpmyadmin/blob/main/.github/workflows/restart-container.yml). И при следующем коммите, проект будет перезагружен.
+
 
 
 
