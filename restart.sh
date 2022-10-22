@@ -1,4 +1,8 @@
 #!/bin/bash
 
-cd /home/momai/project/
+#env file
+. ~/nginx-phpfpm-mysql-phpmyadmin/.env
+
+cd $HOMEDIR
+
 docker-compose restart
