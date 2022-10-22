@@ -22,4 +22,4 @@ jobs:
       env:
        SECRETS_USERNAME: ${{ secrets.USERNAME }}
        SECRETS_HOST: ${{ secrets.HOST }}
-      run: $SECRETS_USERNAME@$SECRETS_HOST sh nginx-phpfpm-mysql-phpmyadmin/update.sh
+      run: ssh $SECRETS_USERNAME@$SECRETS_HOST sh nginx-phpfpm-mysql-phpmyadmin/update.sh
