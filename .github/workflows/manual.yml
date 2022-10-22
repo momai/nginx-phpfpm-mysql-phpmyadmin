@@ -13,7 +13,13 @@ jobs:
       run: sudo echo $SECRETS_KEY >> ~/.ssh/id_rsa.pub
 
     - name: 'run script backupbd'
-      run: ssh momai@34.123.108.90 sh nginx-phpfpm-mysql-phpmyadmin/backupbd.sh
+      env:
+       SECRETS_USERNAME: ${{ secrets.USERNAME }}
+       SECRETS_HOST: ${{ secrets.HOST }}
+      run: ssh $SECRETS_USERNAME@$SECRETS_HOST sh nginx-phpfpm-mysql-phpmyadmin/backupbd.sh
 
     - name: 'run script git pull'
-      run: ssh momai@34.123.108.90 sh nginx-phpfpm-mysql-phpmyadmin/update.sh
+      env:
+       SECRETS_USERNAME: ${{ secrets.USERNAME }}
+       SECRETS_HOST: ${{ secrets.HOST }}
+      run: $SECRETS_USERNAME@$SECRETS_HOST sh nginx-phpfpm-mysql-phpmyadmin/update.sh
