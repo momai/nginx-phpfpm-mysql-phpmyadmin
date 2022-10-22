@@ -35,11 +35,6 @@ services:
             - "./web:/var/www/html"
 
 
-#    composer:
-#        image: "composer"
-#        volumes:
-#            - "./web/app:/app"
-#        command: install
     myadmin:
         image: phpmyadmin/phpmyadmin
         container_name: phpmyadmin
