@@ -2,3 +2,4 @@
 .tmp
 backupbd/*
 data/*
+etc/mysql/mysql-credentials.cnf
