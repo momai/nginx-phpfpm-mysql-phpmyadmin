@@ -4,8 +4,6 @@ on:
     workflows: ["update web pages"]
     types:
       - completed
-      
-  push:
 jobs:
   deploy:
     runs-on: self-hosted
