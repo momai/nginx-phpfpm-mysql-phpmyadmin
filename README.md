@@ -1,5 +1,44 @@
 #  
 
+### description
+Configuration of docker images: nginx, phpfpm, mysql, phpmyadmin
+Automatic deployment on the githib actions'base 
+Databases' backing up via cron
+
+
+### Quick start
+
+1. Clone repo:
+
+```git clone git@github.com:momai/nginx-phpfpm-mysql-phpmyadmin.git && cd nginx-phpfpm-mysql-phpmyadmin ```
+
+2. Edit ```.env```
+
+``` cp .env.simple .env``` and ```nano .env```
+
+3. Start docker-compose
+
+ ```docker-compose up -d```
+ 
+ 
+ ### Backup BD
+ 
+ 1. Edit mysql-credentials.cnf. Enter username and password from bd.
+ 
+ ``` cp etc/mysql/mysql-credentials.cnf.sample etc/mysql/mysql-credentials.cnf```
+ 
+ 2. Write the following in crontab
+ 
+ ```
+$ crontab -e
+00 04 */7 * * sh /projectfolder/nginx-phpfpm-mysql-phpmyadmin/backupbd.sh
+```
+***Specify the correct path to the file.*** 
+ 
+ 
+ 
+------------
+
 ### Описание 
 Данный репозиторий содержит в себе конфигурацию веб сервера в docker. В проект включены: nginx, phpfpm, mysql, phpmyadmin
 Рабочая директория с статикой сайта находится по пути web/public/
